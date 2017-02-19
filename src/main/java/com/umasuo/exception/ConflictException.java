@@ -1,4 +1,4 @@
-package io.reactivesw.exception;
+package com.umasuo.exception;
 
 /**
  * Created by umasuo on 16/12/7.

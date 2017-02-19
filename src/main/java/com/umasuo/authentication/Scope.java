@@ -1,4 +1,4 @@
-package io.reactivesw.authentication;
+package com.umasuo.authentication;
 
 /**
  * Created by umasuo on 17/2/9.

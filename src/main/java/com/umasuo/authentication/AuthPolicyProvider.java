@@ -1,6 +1,6 @@
-package io.reactivesw.authentication;
+package com.umasuo.authentication;
 
-import io.reactivesw.exception.AuthFailedException;
+import com.umasuo.exception.AuthFailedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

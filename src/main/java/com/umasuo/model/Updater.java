@@ -1,4 +1,4 @@
-package io.reactivesw.model;
+package com.umasuo.model;
 
 /**
  * Created by umasuo on 17/2/15.

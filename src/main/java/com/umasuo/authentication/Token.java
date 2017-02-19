@@ -1,4 +1,4 @@
-package io.reactivesw.authentication;
+package com.umasuo.authentication;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

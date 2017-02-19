@@ -1,4 +1,4 @@
-package io.reactivesw.authentication;
+package com.umasuo.authentication;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
