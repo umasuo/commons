@@ -6,9 +6,9 @@ buildscript {
     dependencies {
         // for spring boot
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-
     }
 }
+apply plugin: "io.spring.dependency-management"
 apply plugin: 'java'
 
 compileJava {
@@ -22,8 +22,6 @@ repositories {
         url 'https://repo.spring.io/libs-milestone'
     }
 }
-
-apply plugin: "io.spring.dependency-management"
 
 dependencyManagement {
     imports {
