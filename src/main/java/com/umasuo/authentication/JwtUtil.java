@@ -97,7 +97,7 @@ public class JwtUtil {
    * generate token.
    *
    * @param tokenType : customer token, service token, anonymous token
-   * @param subjectId subject id String
+   * @param subjectId subject id String, 一般用于放置userid，之类的东西
    * @param expires   expires time
    * @param scopes    scope
    * @return String token

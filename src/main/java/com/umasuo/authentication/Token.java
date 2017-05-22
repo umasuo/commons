@@ -8,8 +8,6 @@ import java.util.List;
 /**
  * Customer token
  */
-//@JsonIgnoreProperties(ignoreUnknown = true)
-//@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class Token implements Serializable {
 
