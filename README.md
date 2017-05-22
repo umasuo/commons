@@ -1,6 +1,6 @@
 
 # Commons service
-[![Build Status](https://travis-ci.org/reactivesw/commons.svg?branch=master)](https://travis-ci.org/reactivesw/commons)
+Commons 服务，一个公共类jar包，jar包保存在github上。
 
 # 1 Introduction
 this project provide some tools that will be used in all services.

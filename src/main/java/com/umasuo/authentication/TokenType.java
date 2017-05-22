@@ -18,12 +18,7 @@ public enum TokenType {
   /**
    * used for admin of the system.
    */
-  ADMIN("admin"),
-
-  /**
-   * used for call between services.
-   */
-  SERVICE("service");
+  DEVELOPER("developer");
 
   /**
    * value value.
@@ -59,11 +54,8 @@ public enum TokenType {
       case "customer":
         result = CUSTOMER;
         break;
-      case "admin":
-        result = ADMIN;
-        break;
-      case "service":
-        result = SERVICE;
+      case "developer":
+        result = DEVELOPER;
         break;
     }
     return result;

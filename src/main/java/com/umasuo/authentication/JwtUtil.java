@@ -122,17 +122,6 @@ public class JwtUtil {
   }
 
   /**
-   * generate service token for service.
-   *
-   * @param serviceName service name
-   * @return String
-   */
-  public String generateServiceToken(String serviceName) {
-    return this.generateToken(TokenType.SERVICE, serviceName, Integer.MAX_VALUE,
-        new ArrayList<>());
-  }
-
-  /**
    * generate anonymous token.
    *
    * @return String anonymous token
