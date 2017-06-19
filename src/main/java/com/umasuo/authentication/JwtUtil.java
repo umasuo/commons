@@ -130,4 +130,28 @@ public class JwtUtil {
     return this.generateToken(TokenType.ANONYMOUS, UUID.randomUUID().toString(), 0,
         new ArrayList<>());
   }
+
+  /**
+   * 根据token来生成tokenString.
+   *
+   * @param token Token
+   * @return String
+   */
+  public String generateToken(Token token) {
+    Assert.isTrue(token.getExpiresIn() > 0, "expires should have positive value");
+    Assert.notNull(secret);
+
+    Claims claims = Jwts.claims().setSubject(token.getTokenType().getValue());
+    claims.put("tokenId", UUID.randomUUID().toString());
+    claims.put("subjectId", token.getSubjectId());
+    claims.put("generateTime", System.currentTimeMillis());
+    claims.put("expiresIn", token.getExpiresIn());
+    claims.put("scopes", token.getScopes());
+
+
+    return Jwts.builder()
+        .setClaims(claims)
+        .signWith(SignatureAlgorithm.HS512, secret)
+        .compact();
+  }
 }
