@@ -1,6 +1,5 @@
 package com.umasuo.exception.handler;
 
-import com.google.common.collect.ImmutableList;
 import com.umasuo.exception.AlreadyExistException;
 import com.umasuo.exception.AuthFailedException;
 import com.umasuo.exception.AuthInfoMissingException;
@@ -15,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -51,17 +52,17 @@ public interface ExceptionHandler {
   /**
    * exception that do not log.
    */
-  ImmutableList<?> OMITTED_EXCEPTIONS = ImmutableList
-      .of(AlreadyExistException.class,
-          AuthFailedException.class,
-          AuthInfoMissingException.class,
-          ConflictException.class,
-          CreateResourceFailed.class,
-          ImmutableException.class,
-          NotExistException.class,
-          ParametersException.class,
-          PasswordErrorException.class
-      );
+  List<Class<?>> OMITTED_EXCEPTIONS = Arrays.asList(
+      AlreadyExistException.class,
+      AuthFailedException.class,
+      AuthInfoMissingException.class,
+      ConflictException.class,
+      CreateResourceFailed.class,
+      ImmutableException.class,
+      NotExistException.class,
+      ParametersException.class,
+      PasswordErrorException.class
+  );
 
 
   /**
