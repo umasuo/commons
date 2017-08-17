@@ -1,4 +1,5 @@
 
+[![Build Status](https://travis-ci.org/umasuo/commons.svg?branch=master)](https://travis-ci.org/umasuo/commons)
 # Commons service
 Commons 服务，一个公共类jar包，jar包保存在github上。
 
