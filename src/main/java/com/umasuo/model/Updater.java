@@ -1,7 +1,7 @@
 package com.umasuo.model;
 
 /**
- * Created by umasuo on 17/2/15.
+ * Updater.
  */
 public interface Updater<E, A> {
 

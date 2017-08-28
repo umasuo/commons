@@ -16,6 +16,8 @@
     <!-- sometimes conflict with rule of UnnecessaryConstructor -->
     <exclude name="AtLeastOneConstructor" />
     <exclude name="DataflowAnomalyAnalysis" />
+    <!--some times multi return may be more suitable-->
+    <exclude name="OnlyOneReturn" />
     <!-- conflict with LocalVariableCouldBeFinal -->
     <exclude name="AvoidFinalLocalVariable" />
   </rule>
@@ -44,7 +46,10 @@
     <exclude name="InvalidSlf4jMessageFormat" />
   </rule>
   <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/migrating.xml"></rule>
-  <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/naming.xml"></rule>
+  <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/naming.xml">
+    <!--short name maybe needed-->
+    <exclude name="ShortVariable"></exclude>
+  </rule>
   <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/optimizations.xml">
     <!-- too many final -->
     <exclude name="MethodArgumentCouldBeFinal"></exclude>

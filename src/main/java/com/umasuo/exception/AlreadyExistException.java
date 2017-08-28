@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by bruce on 16/11/15.
+ * Resource already exist.
  */
 public class AlreadyExistException extends RuntimeException {
 

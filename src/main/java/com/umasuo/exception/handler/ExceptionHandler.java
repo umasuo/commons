@@ -1,5 +1,7 @@
 package com.umasuo.exception.handler;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.umasuo.exception.AlreadyExistException;
 import com.umasuo.exception.AuthFailedException;
 import com.umasuo.exception.AuthInfoMissingException;
@@ -14,45 +16,39 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by umasuo on 17/2/9.
+ * Exception handler interface.
  */
 public interface ExceptionHandler {
 
   /**
    * logger.
    */
-  Logger LOG = LoggerFactory.getLogger(ExceptionHandler.class);
+  Logger LOGGER = LoggerFactory.getLogger(ExceptionHandler.class);
 
   /**
    * exception EXCEPTION_MAP.
    */
-  Map<Class<?>, HttpStatus> EXCEPTION_MAP = new ConcurrentHashMap<Class<?>, HttpStatus>() {
-    {
-      this.put(AlreadyExistException.class, HttpStatus.CONFLICT);
-      this.put(AuthFailedException.class, HttpStatus.UNAUTHORIZED);
-      this.put(AuthInfoMissingException.class, HttpStatus.BAD_REQUEST);
-      this.put(ConflictException.class, HttpStatus.CONFLICT);
-      this.put(CreateResourceFailed.class, HttpStatus.INTERNAL_SERVER_ERROR);
-      this.put(ImmutableException.class, HttpStatus.FORBIDDEN);
-      this.put(NotExistException.class, HttpStatus.NOT_FOUND);
-      this.put(ParametersException.class, HttpStatus.BAD_REQUEST);
-      this.put(PasswordErrorException.class, HttpStatus.UNAUTHORIZED);
-    }
-  };
+  ImmutableMap EXCEPTION_MAP = ImmutableMap.builder()
+      .put(AlreadyExistException.class, HttpStatus.CONFLICT)
+      .put(AuthFailedException.class, HttpStatus.UNAUTHORIZED)
+      .put(AuthInfoMissingException.class, HttpStatus.BAD_REQUEST)
+      .put(ConflictException.class, HttpStatus.CONFLICT)
+      .put(CreateResourceFailed.class, HttpStatus.INTERNAL_SERVER_ERROR)
+      .put(ImmutableException.class, HttpStatus.FORBIDDEN)
+      .put(NotExistException.class, HttpStatus.NOT_FOUND)
+      .put(ParametersException.class, HttpStatus.BAD_REQUEST)
+      .put(PasswordErrorException.class, HttpStatus.UNAUTHORIZED).build();
 
   /**
    * exception that do not log.
    */
-  List<Class<?>> OMITTED_EXCEPTIONS = Arrays.asList(
+  List<Class<?>> OMITTED_EXCEPTIONS = ImmutableList.of(
       AlreadyExistException.class,
       AuthFailedException.class,
       AuthInfoMissingException.class,
@@ -78,7 +74,7 @@ public interface ExceptionHandler {
                                 Object obj,
                                 Exception ex) {
     // get the status
-    HttpStatus status = EXCEPTION_MAP.get(ex.getClass());
+    HttpStatus status = (HttpStatus) EXCEPTION_MAP.get(ex.getClass());
     if (status == null) {
       //if this is an unexpected exception, set the code to internal server error.
       status = HttpStatus.INTERNAL_SERVER_ERROR;
@@ -103,7 +99,8 @@ public interface ExceptionHandler {
     boolean shouldLog = !OMITTED_EXCEPTIONS.contains(ex.getClass());
     if (shouldLog) {
       // only log those ones that are real failures
-      LOG.error("request {}, response {}, obj {}, status {}", request, response, obj, status, ex);
+      LOGGER.error("request {}, response {}, obj {}, status {}", request, response, obj, status,
+          ex);
     }
   }
 }

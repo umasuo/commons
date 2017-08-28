@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by bruce on 16/11/15.
+ * Check auth failed.
  */
 public class AuthFailedException extends RuntimeException {
 

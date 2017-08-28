@@ -11,22 +11,10 @@ dependencies {
     // Spring
     compile("org.springframework.boot:spring-boot-starter-web")
 
-    // For @CreatedDate and @LastModifiedDate
-    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.5')
-
     // Spring data jpa
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     // Postgresql driver
     compile('org.postgresql:postgresql:9.4.1212')
 
-    // For json web token
-    compile("io.jsonwebtoken:jjwt:0.7.0")
-
-    // Lombok
-    compile('org.projectlombok:lombok:1.16.12')
-
-    //common tool
-    compile('org.apache.commons:commons-collections4:4.1')
-    compile('org.apache.commons:commons-lang3:3.4')
-    compile("commons-validator:commons-validator:1.4.0")
+    compile("com.google.guava:guava:23.0")
 }

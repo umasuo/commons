@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by Davis on 16/11/28.
+ * Resource not exist.
  */
 public class NotExistException extends RuntimeException {
 

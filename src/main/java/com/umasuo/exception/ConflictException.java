@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 16/12/7.
+ * Conflict with other requests when update/delete a resource.
  */
 public class ConflictException extends RuntimeException {
 

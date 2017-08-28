@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 17/2/3.
+ * No auth info in system.
  */
 public class AuthInfoMissingException extends RuntimeException {
 

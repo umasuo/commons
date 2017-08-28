@@ -1,9 +1,9 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 17/2/10.
+ * Password or username not correct.
  */
-public class PasswordErrorException extends RuntimeException{
+public class PasswordErrorException extends RuntimeException {
   /**
    * default constructor.
    */

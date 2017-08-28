@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 16/12/7.
+ * Resource can not be changed.
  */
 public class ImmutableException extends RuntimeException {
 

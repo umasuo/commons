@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 17/2/4.
+ * Create new resource failed.
  */
 public class CreateResourceFailed extends RuntimeException {
 

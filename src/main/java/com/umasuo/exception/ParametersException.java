@@ -1,7 +1,7 @@
 package com.umasuo.exception;
 
 /**
- * Created by umasuo on 16/11/21.
+ * Parameters not correct.
  */
 public class ParametersException extends RuntimeException {
 
