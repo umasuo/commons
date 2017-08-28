@@ -16,5 +16,8 @@ dependencies {
     // Postgresql driver
     compile('org.postgresql:postgresql:9.4.1212')
 
+    //common tool
+    compile('org.apache.commons:commons-lang3:3.4')
+
     compile("com.google.guava:guava:23.0")
 }

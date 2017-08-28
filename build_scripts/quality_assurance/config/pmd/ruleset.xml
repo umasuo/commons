@@ -41,7 +41,9 @@
   </rule>
   <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/junit.xml"></rule>
   <rule
-    ref="build_scripts/quality_assurance/config/pmd/rulesets/logging-jakarta-commons.xml"></rule>
+    ref="build_scripts/quality_assurance/config/pmd/rulesets/logging-jakarta-commons.xml">
+    <exclude name="GuardLogStatement"/>
+  </rule>
   <rule ref="build_scripts/quality_assurance/config/pmd/rulesets/logging-java.xml">
     <exclude name="InvalidSlf4jMessageFormat" />
   </rule>
